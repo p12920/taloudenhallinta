@@ -26,6 +26,11 @@ function ItemForm(props) {
       navigate('/')
    }
    const navigate = useNavigate()
+   
+   const handleDelete = () => {
+      props.onItemDelete(values.id)
+      navigate(-1)
+   }
 
 
    return (
@@ -82,6 +87,14 @@ function ItemForm(props) {
                   </Button>
                </div>
             </div>
+            {props.onItemDelete ?
+               <div className={styles.itemform_row}>
+                  <div>
+                     <Button secondary onClick={handleDelete}>POISTA</Button>
+                  </div>
+                  <div></div>
+               </div>
+               : null}
          </div>
       </form>
    )

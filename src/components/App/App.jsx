@@ -4,7 +4,12 @@ import { useState } from 'react'
 
 function App() {
   const [data, setData] = useState(testdata)
-  
+  const handleItemDelete = (id) => {
+    let copy = data.slice()
+    copy = copy.filter(item => item.id !== id)
+    setData(copy)
+  }
+
   const handleItemSubmit = (newitem) => {
     let copy = data.slice()
 
@@ -14,7 +19,7 @@ function App() {
     } else {
       copy.push(newitem)
     }
-    
+
     copy.sort((a, b) => {
       const aDate = new Date(a.paymentDate)
       const bDate = new Date(b.paymentDate)
@@ -25,7 +30,7 @@ function App() {
 
   return (
     <>
-      <AppRouter data={data} onItemSubmit={handleItemSubmit} />
+      <AppRouter data={data} onItemSubmit={handleItemSubmit} onItemDelete={handleItemDelete} />
     </>
   )
 }
