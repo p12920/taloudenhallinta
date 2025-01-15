@@ -23,7 +23,7 @@ function Item({ data, ...props }) {
       <div className={styles.item}>
          <div className={styles.item_data}>
             <div className={styles.item_type}>{data.type}</div>
-            <div className={styles.item_amount}>{amount} €</div>
+            <div className={styles.item_amount}>{amount} </div>
             <div className={styles.item_date}>{paymentDate}</div>
             <div className={styles.item_timespan}>{period}</div>
             <div className={styles.item_receiver}>{data.receiver}</div>
