@@ -17,7 +17,7 @@ function AppRouter(props) {
             { path: "", element: <Items />, 
               loader: () => { return props.data } },
             { path: "stats", element: <Stats /> },
-            { path: "settings", element: <Settings typelist={props.typelist} /> },
+            { path: "settings", element: <Settings typelist={props.typelist} onTypeSubmit={props.onTypeSubmit} /> },
             { path: "add", element: <AddItem onItemSubmit={props.onItemSubmit} typelist={props.typelist} /> },
             { path: "edit/:id", element: <EditItem onItemSubmit={props.onItemSubmit} onItemDelete={props.onItemDelete} typelist={props.typelist} />,
                loader: ({ params }) => {
