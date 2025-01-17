@@ -2,7 +2,8 @@ import AppRouter from '../AppRouter'
 import testdata from './testdata.js'
 import { useState } from 'react'
 import useLocalStorage from '../../shared/uselocalstorage'
-import firebase from './firebase.js'
+//61. Google-kirjautuminen vaihe aiheutti virheen: "Parsing error: Identifier 'auth' has already been declared", joka korjautui poistamalla {auth} alla olevasta importista.
+import firebase/*, { auth }*/ from './firebase.js'
 import { addDoc, collection, deleteDoc, doc, getFirestore, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore'
 import { useEffect } from 'react'
 import { getAuth } from 'firebase/auth'
@@ -66,7 +67,9 @@ function App() {
           <AppRouter data={data}
                     typelist={typelist} 
                     onItemSubmit={handleItemSubmit} onItemDelete={handleItemDelete}
-                    onTypeSubmit={handleTypeSubmit} />
+                    onTypeSubmit={handleTypeSubmit}
+                    auth={auth}
+                    user={user} />
       : <Startup auth={auth} />
       }
     </>
