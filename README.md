@@ -8,7 +8,7 @@ Harjoitustyönä toteutettu React-projekti, jolla voi kirjata ja seurata omia me
 
 ## Tekniikat
 
-Projektin on toteutetuksessa on hyödynnetty mm. seuraavia tekniikoita: 
+Projektin on toteutuksessa on hyödynnetty mm. seuraavia tekniikoita: 
  - React
  - React Router
  - React Icons ja
